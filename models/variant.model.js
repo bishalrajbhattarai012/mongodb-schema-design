@@ -1,6 +1,29 @@
 import mongoose from "mongoose";
 
 // VARIANT SCHEMA
+export const AmountSchema = new mongoose.Schema(
+  {
+    price: {
+      type: Number,
+      required: true,
+    },
+    discountPercent: {
+      type: Number,
+      required: false,
+    },
+    discountedAmount: {
+      type: Number,
+      required: false,
+    },
+    currency: {
+      type: String,
+      required: true,
+      default: "USD",
+    },
+  },
+  { _id: false }
+);
+
 export const VariantSchema = new mongoose.Schema(
   {
     productId: {
@@ -20,10 +43,7 @@ export const VariantSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    price: {
-      type: Number,
-      required: true,
-    },
+    amount: AmountSchema,
     stock: {
       type: Number,
       default: 0,
