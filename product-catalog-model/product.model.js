@@ -15,6 +15,7 @@ const ProductSchema = new mongoose.Schema(
     },
 
     categories: [{ type: CategorySchema }],
+
     brandName: { type: String, required: true },
     brandId: {
       type: mongoose.Schema.Types.ObjectId,

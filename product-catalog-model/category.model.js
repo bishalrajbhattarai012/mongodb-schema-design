@@ -17,7 +17,10 @@ export const CategorySchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    _id: false, // Prevents the creation of an _id field for subdocuments
+    timestamps: true,
+  }
 );
 
 export const Category = mongoose.model("Category", CategorySchema);
