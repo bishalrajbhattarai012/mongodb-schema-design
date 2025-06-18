@@ -6,6 +6,12 @@ export const CategorySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    parentId: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+    parentName: {
+      type: String,
+    },
     description: {
       type: String,
       required: true,
