@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { RestaurantCategory } from "./restaurant.category.model";
 import { MenuItemSchema } from "./menu.item.model";
 
 export const RestaurantSchema = new mongoose.Schema({
@@ -8,7 +7,7 @@ export const RestaurantSchema = new mongoose.Schema({
     required: true,
   },
   restaurantCategoryName: { type: String, required: true },
-  restaurantCategory: {
+  restaurantCategoryId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "RestaurantCategory",
     required: true,
